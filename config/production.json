@@ -1,0 +1,16 @@
+{
+  "app": {
+    "rootPath": "/",
+    "storageKey": "user_session"
+  },
+  "api": {
+    "target": "https://localhost:8001/",
+    "path": "api/"
+  },
+  "mock": {
+    "target": "http://localhost:8000",
+    "path": "/api",
+    "host": "localhost",
+    "port": 8001
+  }
+}

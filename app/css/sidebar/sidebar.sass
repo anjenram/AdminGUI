@@ -1,0 +1,56 @@
+$SHADOW_LVL_1: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)
+$SHADOW_LVL_2: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3)
+$SHADOW_LVL_3: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3)
+$text-shadow: 0px 0px 2px rgba(150, 150, 150, 0.75)
+$Z_INDEX_LVL_1: 1
+$Z_INDEX_LVL_2: 2
+$Z_INDEX_LVL_3: 3
+$color-teal: #4db6ac
+$color-light-grey: #eceff1
+#sidebar_menu
+  ul
+    li
+      list-style: none
+      text-align: left
+      margin: 1px
+      a
+        text-decoration: none
+        text-transform: uppercase
+        font-size: 18px
+        color: #0f0f0f
+        display: block
+        box-shadow: none
+        padding: 3px 10px
+        &:hover
+          color: $color-teal
+          box-shadow: $SHADOW_LVL_1
+          transition: all .75s
+.user
+  width: 100%
+  height: 100px
+  display: flex
+  justify-content: flex-start
+  background: url("/images/bguser.png")
+  background-size: cover
+  .user_logo
+    align-self: flex-end
+    border-radius: 50%
+    height: 50px
+    width: 50px
+    margin: 10px
+    background-color: #666666
+    .user_logo-img
+      height: 50px
+      width: 50px
+      border-radius: 50%
+      background: url("/images/boy.svg") no-repeat top left
+      background-size: contain
+  .user_name
+    align-self: flex-end
+    margin-bottom: 10px
+    a
+      text-decoration: none
+      text-transform: uppercase
+      color: #ffffff
+      text-align: center
+      text-shadow: $text-shadow

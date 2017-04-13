@@ -1,0 +1,17 @@
+{
+  "app": {
+    "target": "http://localhost:8000",
+    "rootPath": "/",
+    "storageKey": "user_session",
+    "sessionKey": "authentication_token"
+  },
+  "test": {
+    "port": 9999
+  },
+  "mock": {
+    "target": "http://localhost:8000",
+    "path": "/v1",
+    "host": "localhost",
+    "port": 8001
+  }
+}

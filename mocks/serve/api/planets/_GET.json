@@ -1,0 +1,12 @@
+{
+  "_id": {
+    "$oid": "58b6eec76641a90004990482"
+  },
+  "water": true,
+  "terrain": "tundra, ice caves, mountain ranges",
+  "diameter": "17421 km",
+  "gravity": "1.1 standard",
+  "mass": "6.9742×10^21",
+  "name": "Hoth",
+  "__v": 0
+}

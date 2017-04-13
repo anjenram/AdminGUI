@@ -1,0 +1,18 @@
+{
+  "requestUrl": "/",
+  "contentType": "application/javascript",
+  "statusCode": 200,
+  "data": [
+    {
+      "_id": {
+        "$oid": "58b6ed276641a90004990481"
+      },
+      "pilot": "Captain D.N.Ermak",
+      "hyperdrive": "2.754",
+      "class": "Dreadnought",
+      "model": "Dreadnought-rogue gen.4 887-97VFD",
+      "name": "Eclipsed Sky",
+      "__v": 0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "requestUrl": "/",
+  "contentType": "application/javascript",
+  "statusCode": 200,
+  "data": [
+    {
+      "_id": {
+        "$oid": "58b6db50a04ddf0004889093"
+      },
+      "roles": "0",
+      "name": "Anjy",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "58b6db5ba04ddf0004889094"
+      },
+      "roles": "1",
+      "name": "Malu",
+      "__v": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+$font-family-sans-serif: 'Roboto', Helvetica, Arial, sans-serif
+$font-family-base: $font-family-sans-serif
+//
+//$font-family-sans-serif-second: Verdana,Geneva,sans-serif
+//
+@import "fonts/roboto"
+@import "fonts/material-design-icons"
+// Reset and dependencies
+@import "bootstrap/normalize"
+//// Core CSS
+//@import "bootstrap/scaffolding.scss"
+//@import "bootstrap/type.scss"
+//@import "bootstrap/code.scss"
+//@import "bootstrap/grid.scss"
+//@import "bootstrap/tables.scss"
+//@import "bootstrap/forms.scss"
+//@import "bootstrap/buttons.scss"
+//@import "bootstrap/badges.scss"
+
+//@import "components/btn"
+//@import "components/label"
+//@import "components/control-label"
+//@import "components/btn-circle"
+@import "regions"
+@import "header/header"
+@import "sidebar/sidebar"
+@import "home/home"
+
+//BASE STYLE
+body
+  font-family: $font-family-sans-serif
+  display: flex
+  flex-direction: column
+.row
+  display: flex
