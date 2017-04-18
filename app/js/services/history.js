@@ -6,9 +6,9 @@ var history = Backbone.history;
 
 var History = {
   init: function () {
-    // history.start({
-    //   root: '/'
-    // })
+    history.start({
+      root: '/'
+    })
   },
 
   reload: function() {

@@ -6,6 +6,10 @@ $Z_INDEX_LVL_2: 2
 $Z_INDEX_LVL_3: 3
 $color-teal: #4db6ac
 $color-light-grey: #eceff1
+.head-conteiner
+  display: flex
+  flex-direction: row
+  justify-content: space-between
 .header-logo
   margin: 10px 20px
   text-align: center
@@ -32,3 +36,33 @@ $color-light-grey: #eceff1
     font-weight: 500
     margin-top: 10px
 
+#head-menu
+  display: flex
+  ul
+    align-self: flex-end
+    padding-left: 0
+    li
+      display: inline-block
+      list-style: none
+      a
+        text-decoration: none
+        text-transform: uppercase
+        color: #ffffff
+        padding: 15px 20px
+        &:hover
+          background: #ffffff
+          color: $color-teal
+          box-shadow: $SHADOW_LVL_1
+          transition: all .75s ease-in-out
+.head-user
+  margin-right: 5px
+  align-self: center
+  .btn
+    cursor: pointer
+    padding: 5px 5px 5px 10px
+    color: #ffffff
+    &:hover
+      background: #ffffff
+      color: $color-teal
+      box-shadow: $SHADOW_LVL_1
+      transition: all .4s ease-in-out

@@ -22,23 +22,34 @@ Session = {
         Storage.set(STORAGE_KEY, this.currentUser().toJSON());
     },
 
+    // create: function (cbs) {
+    //     var _this = this;
+    //     this.currentUser().login({}, {
+    //         success: function () {
+    //             _this.save();
+    //             History.navigate('#/board/tasks/', { trigger: true });
+    //         },
+    //         error: function (xhr, status, error) {
+    //             _this.currentUser().trigger('error', _this.currentUser(), JSON.parse(xhr.responseText) || {}, {});
+    //         }
+    //     });
+    // },
     create: function (cbs) {
         var _this = this;
-        this.currentUser().login({}, {
-            success: function () {
-                _this.save();
-                History.navigate('#/board/tasks/', { trigger: true });
-            },
-            error: function (xhr, status, error) {
-                _this.currentUser().trigger('error', _this.currentUser(), JSON.parse(xhr.responseText) || {}, {});
-            }
-        });
+        // this.currentUser().login({}, {
+        //     success: function () {
+        //         _this.save();
+                History.navigate('#/', { trigger: true });
+            // },
+            // error: function (xhr, status, error) {
+            //     _this.currentUser().trigger('error', _this.currentUser(), JSON.parse(xhr.responseText) || {}, {});
+            // }
+        // });
     },
-
     clean: function () {
-        Storage.remove(STORAGE_KEY);
-        this.currentUser().clear();
-        History.navigate('#/', { trigger: true });
+        // Storage.remove(STORAGE_KEY);
+        // this.currentUser().clear();
+        History.navigate('#/login', { trigger: true });
     },
 
     getToken: function() {

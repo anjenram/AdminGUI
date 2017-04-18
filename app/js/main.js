@@ -9,7 +9,7 @@ Backbone.$ = $;
 window.jQuery = $;
 window._ = _;
 
-
+require('./initializers/login');
 require('./initializers/dictionaries');
 require('./initializers/stickit');
 require('./initializers/main');

@@ -12,7 +12,6 @@ BaseLayoutView = Marionette.View.extend({
 
     regions: {
         headerRegion: '#header_region',
-        sidebarRegion: '#sidebar_region',
         contentRegion: '#content_region',
         footerRegion: '#footer_region'
     },

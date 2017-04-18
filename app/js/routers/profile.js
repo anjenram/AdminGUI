@@ -5,7 +5,7 @@ var BaseRouter = require('./base'),
     SettingsRouter;
 SettingsRouter = BaseRouter.extend({
     appRoutes:{
-        '/profile': 'profile'
+        'profile': 'profile'
 
     },
     controller: new ProfileController()

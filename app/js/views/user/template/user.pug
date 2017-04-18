@@ -7,14 +7,19 @@
     .row
         .box
             h3 Contols
+            #from-userslist
         .box
             h2 List
             table
                 thead
                     tr
+                        th
+                            input(type="checkbox" name="select-all").js-th
                         th ID
-                        th Active
+                        th Admin
                         th Username
                         th E-mail
                         th Time created
                 tbody#user-list
+
+            button.remove-all Remove All

@@ -6,7 +6,17 @@ var Mn = require('backbone.marionette'),
 
 UserInfoListView = Mn.CollectionView.extend({
     tagName: 'tbody',
-    childView: ItemView
+    childView: ItemView,
+    templateContext: function () {
+        console.log(this.model)
+        var vaule = this.model.get('isActive');
+        if(!vaule) {
+            this.model.set('isActive', 'NO')
+        } else {
+            this.model.set('isActive', 'YES')
+        }
+
+    }
 });
 
 module.exports = UserInfoListView;

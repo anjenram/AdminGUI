@@ -4,20 +4,20 @@ var Mn = require('backbone.marionette'),
     Bb =require('backbone'),
     $ = require('jquery'),
     AppConfig = require('../../config'),
-    UserCollection = require('../../collections/users'),
-    UserlistView =require('./childs/userlist/list'),
-    FromUserlistView =require('./childs/from/form'),
-    UserModel = require('../../models/users'),
-    UsersView;
+    SidebarCollection = require('../../collections/sidemenu'),
+    SidebarlistView =require('./childs/sidebar/list'),
+    FromSidebarlistView =require('./childs/formsidebar/form'),
+    SideMenuModel = require('../../models/sidemenu'),
+    SettingsView;
 
-UsersView = Mn.View.extend({
-    template: require('./template/user.pug'),
+SettingsView = Mn.View.extend({
+    template: require('./template/settings.pug'),
     regions: {
-        users: {
-            el: '#user-list',
+        sidebarlist: {
+            el: '#sidebar-settings-list',
             replaceElement: true
         },
-        formuser: '#from-userslist'
+        formsidemenu: '#settings-form-sidebar'
     },
     ui: {
         selectAll: '.js-th',
@@ -30,35 +30,32 @@ UsersView = Mn.View.extend({
         'click @ui.removeAll': 'onRemoveAll'
     },
     onRender: function () {
-        this.showUserlist()
+        this.showSidebarlist()
         this.showForm()
     },
-    showUserlist: function () {
-        var userlist = new UserCollection();
-        userlist.fetch();
+    showSidebarlist: function () {
+        var sidebarList = new SidebarCollection();
+        sidebarList.fetch();
 
-        this.listenTo(userlist, 'sync', function () {
-            this.showChildView('users',
-                new UserlistView({
-                    collection: userlist
+        this.listenTo(sidebarList, 'sync', function () {
+            this.showChildView('sidebarlist',
+                new SidebarlistView({
+                    collection: sidebarList
                 })
             )
         })
     },
     showForm: function () {
-        var userlist = new UserCollection();
-        // var userModel = new UserModel();
-        // userlist.fetch();
-        // userModel.fetch();
 
-        // this.listenTo(userlist, 'sync', function () {
-            this.showChildView('formuser',
-                new FromUserlistView({
-                    // collection: userlist,
-                    // model: userModel
-                })
-            )
-        // })
+
+
+        this.showChildView('formsidemenu',
+            new FromSidebarlistView({
+                // collection: userlist,
+                // model: userModel
+            })
+        )
+
     },
     onSelectAll: function (e) {
         // $(".remove-all").prop("disable='false'");
@@ -68,7 +65,7 @@ UsersView = Mn.View.extend({
         var arr = allIDS.split(' ');
         arr.splice(0, 1)
         checks.each(function (i, a) {
-           var itm = $(a);
+            var itm = $(a);
             itm.prop("checked", !itm.prop("checked"));
         })
         console.log(arr);
@@ -79,7 +76,7 @@ UsersView = Mn.View.extend({
         console.log($(id).text())
     },
     onRemoveAll: function (e) {
-        var ids = this.$el.find('.user-id');
+        var ids = this.$el.find('.side-id');
         var allIDS = $(ids).text();
         var arr = allIDS.split(' ');
         arr.splice(0, 1);
@@ -94,4 +91,4 @@ UsersView = Mn.View.extend({
     }
 });
 
-module.exports = UsersView;
+module.exports = SettingsView;

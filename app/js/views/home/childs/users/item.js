@@ -6,6 +6,7 @@ var Mn = require('backbone.marionette'),
 UserInfoItemView = Mn.View.extend({
     tagName: 'tr',
     template: template,
+
 });
 
 module.exports = UserInfoItemView;

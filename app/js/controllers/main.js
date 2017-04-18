@@ -4,7 +4,6 @@ var Mn = require('backbone.marionette'),
     App = require('../app'),
     _ = require('underscore'),
     HomeView = require('../views/home/home'),
-    SidebarView = require('../views/sidebar/sidebar'),
     HeaderView = require('../views/header/header'),
     MainController;
 
@@ -12,11 +11,6 @@ MainController = Mn.Object.extend({
 
     index: function() {
         console.log('router');
-            App.layout.showChildView('sidebarRegion',
-                new SidebarView({
-
-                })
-            );
             App.layout.showChildView('headerRegion',
                 new HeaderView({
 

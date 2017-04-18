@@ -1,12 +1,11 @@
 'use strict';
 var Mn = require('backbone.marionette'),
     template = require('./template/item.pug'),
-    UserInfoItemView;
+    SideMenuInfoItemView;
 
-UserInfoItemView = Mn.View.extend({
+SideMenuInfoItemView = Mn.View.extend({
     tagName: 'tr',
-    template: template,
-
+    template: template
 });
 
-module.exports = UserInfoItemView;
+module.exports = SideMenuInfoItemView;

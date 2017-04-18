@@ -5,7 +5,7 @@ var BaseRouter = require('./base'),
     UsersRouter;
 UsersRouter = BaseRouter.extend({
     appRoutes:{
-        '#/userslist': 'userslist'
+        'userslist': 'userslist'
     },
     controller: new UsersController()
 });

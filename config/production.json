@@ -4,7 +4,7 @@
     "storageKey": "user_session"
   },
   "api": {
-    "target": "https://localhost:8001/",
+    "target": "http://api.unjen.com/",
     "path": "api/"
   },
   "mock": {
