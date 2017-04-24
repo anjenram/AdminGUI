@@ -7,6 +7,7 @@ var Mn = require('backbone.marionette'),
     FormBehavior = require('../../behaviors/form'),
     UserModes = require('../../models/users'),
     History = require('../../services/history'),
+    Session = require('../../services/session'),
     SugnUpView;
 
 SugnUpView = Mn.View.extend({
@@ -42,11 +43,18 @@ SugnUpView = Mn.View.extend({
     onSubmit: function (e) {
         e.preventDefault();
         var _this = this;
+        this.model.set('timeCreated', new Date());
+        this.model.set('admin', false);
         this.model.save(null,{
             type: 'POST',
-            success: function () {
-                console.log(Session.create())
-                Session.create();
+            success: function (m, data) {
+                if(data.message === "User created!") {
+                    $('.hiddenblock').append('<span class="success-text">User created!</span>')
+                    setInterval(function () {
+                        $('.success-text').hide(2000);
+                        History.navigate('#/login', { trigger: true });
+                    }, 4000)
+                }
             }
         });
     },

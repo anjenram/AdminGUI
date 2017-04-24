@@ -11,6 +11,9 @@ var Mn = require('backbone.marionette'),
     SettingsView;
 
 SettingsView = Mn.View.extend({
+    initialize: function (options) {
+        this.SelectId = ''
+    },
     template: require('./template/settings.pug'),
     regions: {
         sidebarlist: {
@@ -22,12 +25,12 @@ SettingsView = Mn.View.extend({
     ui: {
         selectAll: '.js-th',
         selectTd: '.js-td',
-        removeAll: '.remove-all'
+        remove: '.remove'
     },
     events: {
         'click @ui.selectAll': 'onSelectAll',
         'click @ui.selectTd': 'onSelectTD',
-        'click @ui.removeAll': 'onRemoveAll'
+        'click @ui.remove': 'onRemove'
     },
     onRender: function () {
         this.showSidebarlist()
@@ -72,22 +75,24 @@ SettingsView = Mn.View.extend({
         return arr
     },
     onSelectTD: function (e) {
-        var id = this.$el.find('.user-id');
-        console.log($(id).text())
+        var _this = this;
+        var CurrentEl = this.$el.find(e.target);
+        var id = CurrentEl.parent().next('td').text();
+        console.log(id)
+        return _this.SelectId = id
     },
-    onRemoveAll: function (e) {
-        var ids = this.$el.find('.side-id');
-        var allIDS = $(ids).text();
-        var arr = allIDS.split(' ');
-        arr.splice(0, 1);
-        arr.forEach(function (i, e) {
-            var model = new UserModel({
-                id: i
-            });
-            console.log(model);
-            model.destroy()
+    onRemove: function (e) {
+        var _this = this;
+        var id = _this.SelectId;
+        console.log(id)
+        var sideSelectModel = new SideMenuModel({
+            id: id
+        });
+        sideSelectModel.destroy({
+            success:function () {
+                console.log('DELITED!')
+            }
         })
-        this.collection.fetch();
     }
 });
 

@@ -13,9 +13,13 @@ form.users-control_from
         input(id="password" name="password" type="password"  required).form-control_input
         span.highlightspan.bar
         label(for="password").from-control_label Password
-    .from-group
-            input(id="admin" name="admin" type="checkbox" required).form-control_input
-            label(for="admin").from-control_label Admin
+    .form-group.checkbox
+            label Admin
+                input(id="admin" name="admin" type="checkbox")
+                span.checkbox-material
+                    span.check
+
+
     .from-group
         button.btn.bt-form-control.submit Send
         button.btn.bt-form-control.remove Clear

@@ -1,7 +1,7 @@
 var Config;
 
 Config = {
-  apiPath: 'http://localhost:8011/api/',
+  apiPath: 'http://api.unjen.com/api/',
   rootPath: '/',
   headers: {
   }

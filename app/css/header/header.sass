@@ -57,10 +57,12 @@ $color-light-grey: #eceff1
 .head-user
   margin-right: 5px
   align-self: center
+  display: flex
   .btn
     cursor: pointer
     padding: 5px 5px 5px 10px
     color: #ffffff
+    align-self: center
     &:hover
       background: #ffffff
       color: $color-teal
@@ -69,7 +71,19 @@ $color-light-grey: #eceff1
   .user-logout
     background: none
     box-shadow: none
+  .user-block
+    display: flex
+    height: 70px
+    padding: 10px 15px
+    background: #fff
+    cursor: pointer
+    &:hover
+      .user-name-username
+        color: #5264AE
+        transition: color 1.95s ease-in-out
   .user-name
-    color: #ffffff
-    .user-name-username
-      text-transform: uppercase
+    color: $color-teal
+  .user-name-username
+    margin-left: 5px
+    color: $color-teal
+    text-transform: uppercase

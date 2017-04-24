@@ -8,7 +8,7 @@
     "port": 9999
   },
   "api": {
-    "target": "http://localhost:8011/",
+    "target": "http://api.unjen.com/",
     "path": "api/"
   },
   "mock": {

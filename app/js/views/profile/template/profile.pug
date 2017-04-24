@@ -1,0 +1,36 @@
+.row.profile-page
+    .box
+        .page-title
+            h3 Profile
+        .user-info
+            p ID: #{_id}
+            p Username: #{username}
+            p E-mail: #{email}
+
+        a.btn.remove-profile delete profile
+    .box
+        .page-title
+            h3 Update profile
+        form
+            .from-group
+                input(type="name" name="username" placeholder='#{username}' required)
+                span.highlight
+                span.bar
+                label  User Name
+            .from-group
+                input(type="email" name="email" placeholder='#{email}' required)
+                span.highlight
+                span.bar
+                label E-Mail
+            .from-group
+                input(type="password" name="password" required)
+                span.highlight
+                span.bar
+                label Password
+            .form-group.checkbox
+                label Admin
+                    input(id="admin" name="admin" type="checkbox")
+                    span.checkbox-material
+                        span.check
+            .from-group
+                button.btn.bt-form-control.update-profile.submit Update

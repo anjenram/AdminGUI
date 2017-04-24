@@ -90,7 +90,7 @@ UsersView = Mn.View.extend({
             console.log(model);
             model.destroy()
         })
-        this.collection.fetch();
+        // this.collection.fetch();
     }
 });
 
