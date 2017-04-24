@@ -1,16 +1,21 @@
 form.users-control_from
     .from-group
-        label(for="username").from-control_label Username:
-        input(id="username" name="username" type="text" placeholder="Enter name").form-control_input
+        input(id="username" name="username" type="text"  required).form-control_input
+        span.highlight
+        span.bar
+        label(for="username").from-control_label Username
     .from-group
-        label(for="email").from-control_label E-mail:
-        input(id="email" name="email" type="email" placeholder="example@mail.com").form-control_input
+        input(id="email" name="email" type="email"  required).form-control_input
+        span.highlight
+        span.bar
+        label(for="email").from-control_label E-mail
     .from-group
-        label(for="password").from-control_label Password:
-        input(id="password" name="password" type="password" placeholder="Enter password").form-control_input
+        input(id="password" name="password" type="password"  required).form-control_input
+        span.highlightspan.bar
+        label(for="password").from-control_label Password
     .from-group
-        label(for="admin").from-control_label Admin:
-            input(id="admin" name="admin" type="checkbox").form-control_input
+            input(id="admin" name="admin" type="checkbox" required).form-control_input
+            label(for="admin").from-control_label Admin
     .from-group
         button.btn.bt-form-control.submit Send
         button.btn.bt-form-control.remove Clear

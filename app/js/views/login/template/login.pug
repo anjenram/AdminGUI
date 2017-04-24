@@ -1,5 +1,9 @@
 .box.login-box
+    .tile-form
+        span Login
     form.form-login
+        .form-group.hiddenblock
+            input(type='hidden' name='non_field_errors')
         .from-group
             input(type="name" name="username" required)
             span.highlight
@@ -10,6 +14,7 @@
             span.highlight
             span.bar
             label Password
-        .from-group
-            button.logIn Log In
+
+        .from-group.btns-control
+            button.btn.logIn Log In
             a.btn Sign Up

@@ -1,10 +1,12 @@
 form.users-control_from
     .from-group
+        input(id="name" name="name" type="text" required).form-control_input
+        span.highlightspan.bar
         label(for="name").from-control_label Name item:
-        input(id="name" name="name" type="text" placeholder="Name menu item").form-control_input
     .from-group
+        input(id="url" name="url" type="text" required).form-control_input
+        span.highlightspan.bar
         label(for="url").from-control_label Path url:
-        input(id="url" name="url" type="text" placeholder="Link path '/url'").form-control_input
     .from-group
         button.btn.bt-form-control.submit Send
         button.btn.bt-form-control.remove Clear

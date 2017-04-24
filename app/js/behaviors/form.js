@@ -2,9 +2,10 @@
 
 var Mn = require('backbone.marionette'),
     _ = require('underscore'),
+    Tooltip = require('../helpers/tooltip'),
     FormBehavior;
 
-var Tooltip = require('../helpers/tooltip');
+// var Tooltip = require('../helpers/tooltip');
 // var Loader = require('../helpers/loader');
 
 FormBehavior = Mn.Behavior.extend({

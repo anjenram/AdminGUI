@@ -5,23 +5,30 @@ var Mn = require('backbone.marionette'),
     _ = require('underscore'),
     UsersView = require('../views/user/user'),
     HeaderView = require('../views/header/header'),
+    ErorrView = require('../views/erorr/erorr'),
+
+    Storage = require('../services/storage'),
+
     UsersController;
 
 UsersController = Mn.Object.extend({
 
     userslist: function() {
         console.log('userlist');
-        App.layout.showChildView('headerRegion',
-            new HeaderView({
+        if (Storage.get('logined')) {
+            App.layout.showChildView('headerRegion',
+                new HeaderView({})
+            );
+            App.layout.showChildView('pageRegion',
+                new UsersView({})
+            );
+        } else {
+            App.layout.showChildView('pageRegion',
+                new ErorrView({
 
-            })
-        );
-        App.layout.showChildView('pageRegion',
-            new UsersView({
-
-            })
-        );
-
+                })
+            );
+        }
 
 
     }

@@ -5,12 +5,17 @@ var Mn = require('backbone.marionette'),
     _ = require('underscore'),
     HomeView = require('../views/home/home'),
     HeaderView = require('../views/header/header'),
+    ErorrView = require('../views/erorr/erorr'),
+    Session = require('../services/session'),
+    Storage = require('../services/storage'),
     MainController;
 
 MainController = Mn.Object.extend({
 
     index: function() {
         console.log('router');
+        console.log(Storage.get('logined'))
+        if (Storage.get('logined')) {
             App.layout.showChildView('headerRegion',
                 new HeaderView({
 
@@ -21,6 +26,15 @@ MainController = Mn.Object.extend({
 
                 })
             );
+        } else {
+            App.layout.showChildView('pageRegion',
+                new ErorrView({
+
+                })
+            );
+        }
+
+
 
 
 

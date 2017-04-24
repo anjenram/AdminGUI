@@ -7,9 +7,8 @@ var BaseRouter = require('./base'),
 
 MainRouter = Mn.AppRouter.extend({
     appRoutes: {
-        '': 'index',
         '/': 'index',
-        '#': 'index'
+        '': 'index'
     },
 
     // controller: new MainController()

@@ -11,7 +11,7 @@ var currentUser = null;
 
 Session = {
     currentUser: function() {
-        return currentUser || (currentUser = new User(Storage.get(STORAGE_KEY)));
+        return Storage.get('user')
     },
 
     isLoggedIn: function() {
@@ -34,12 +34,10 @@ Session = {
     //         }
     //     });
     // },
-    create: function (cbs) {
+    create: function (data) {
         var _this = this;
-        // this.currentUser().login({}, {
-        //     success: function () {
-        //         _this.save();
-                History.navigate('#/', { trigger: true });
+        Storage.set('user',data);
+        History.navigate('#/', { trigger: true });
             // },
             // error: function (xhr, status, error) {
             //     _this.currentUser().trigger('error', _this.currentUser(), JSON.parse(xhr.responseText) || {}, {});
